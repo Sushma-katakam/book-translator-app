@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Summary Translator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #ffebcd;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background: #ffffff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            text-align: center;
+        }
+        h2 {
+            color: #4a90e2;
+        }
+        select, button {
+            width: 100%;
+            margin-top: 10px;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #4a90e2;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #357ab7;
+        }
+        p {
+            white-space: pre-line;
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            border-left: 5px solid #4a90e2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>📚 Book Summary Translator 🌍</h2>
+        
+        <label for="book">📖 Select a Book:</label>
+        <select id="book" onchange="showSummary()">
+            <option value="">--Select a Book--</option>
+            <option value="1">Job agree least.</option>
+<option value="2">Conference could take.</option>
+<option value="3">Thank.</option>
+<option value="4">Mean five administration.</option>
+<option value="5">Lay mention bed.</option>
+<option value="6">Small knowledge.</option>
+<option value="7">Activity city.</option>
+<option value="8">Vote season maybe.</option>
+<option value="9">Human assume visit.</option>
+<option value="10">Democrat down.</option>
+<option value="11">Production instead.</option>
+<option value="12">Data hair reflect.</option>
+<option value="13">Job four.</option>
+<option value="14">American someone.</option>
+<option value="15">Nor word degree.</option>
+<option value="16">Break fine unit.</option>
+<option value="17">Thing arrive.</option>
+<option value="18">Yourself way.</option>
+<option value="19">Sport adult.</option>
+<option value="20">Majority true.</option>
+<option value="21">Another decision.</option>
+<option value="22">Number explain.</option>
+<option value="23">Black walk.</option>
+<option value="24">Only word around.</option>
+<option value="25">Great watch.</option>
+<option value="26">You everyone democratic design.</option>
+<option value="27">Say course manage.</option>
+<option value="28">Son reason today.</option>
+<option value="29">History election.</option>
+<option value="30">Home either.</option>
+
+        </select>
+        
+        <h3>📝 Original Summary:</h3>
+        <p id="originalSummary"></p>
+        
+        <label for="language">🌐 Select Language:</label>
+        <select id="language">
+            <option value="es">Spanish</option>
+            <option value="fr">French</option>
+            <option value="de">German</option>
+            <option value="zh">Chinese</option>
+            <option value="hi">Hindi</option>
+        </select>
+        
+        <button onclick="translateSummary()">🔄 Translate</button>
+        
+        <h3>📄 Translated Summary:</h3>
+        <p id="translatedSummary"></p>
+    </div>
+    
+    <script>
+        
+        
+        async function showSummary() {
+            const bookId = document.getElementById("book").value;
+            const response =await fetch(`http://localhost:5000/Summary/${bookId}`);
+            const data = await response.text();
+            document.getElementById("originalSummary").innerText = data;
+            document.getElementById("translatedSummary").innerText = "";
+        }   
+        
+        
+        async function translateSummary() {
+            const summaryText = document.getElementById("originalSummary").innerText;
+            const language = document.getElementById("language").value;
+            
+            if (!summaryText) {
+                alert("Please select a book first.");
+                return;
+            }
+            
+            const response = await fetch(`https://api.mymemory.translated.net/get?q=${encodeURIComponent(summaryText)}&langpair=en|${language}`);
+            const data = await response.json();
+            
+            document.getElementById("translatedSummary").innerText = data.responseData.translatedText;
+        }
+    </script>
+</body>
+</html>
