@@ -6,7 +6,7 @@ Book Summary Translator is a web application that allows users to view book summ
 This app demonstrates how to integrate APIs, build a multilingual system, and orchestrate containers.
 
 
-📑 Table of Contents
+## 📑 Table of Contents
  •	Introduction
 
 •	Prerequisites
@@ -41,32 +41,34 @@ Open a terminal in the project root folder and run:
 docker-compose up --build
 ```
 
-🌐 Access the App
+## 🌐 Access the App
 Once the containers are running, you can access the app at:
 
 🖥 Frontend UI	
 http://localhost:8080
 
-📘 Book API
+## 📘 Book API
 	http://localhost:8081/books
 
-🌍 Translation API	
+## 🌍 Translation API	
 http://localhost:5000/Summary/1
 
-🔌 API Endpoints
-📘 Book API (http://localhost:8081)
+## 🔌 API Endpoints
+## 📘 Book API 
+    http://localhost:8081
 
 •	GET /books → Get list of all books
 
 •	GET /books/<id> → Get book by ID
 
-🌍 Translate API (http://localhost:5000)
+## 🌍 Translate API 
+http://localhost:5000
 
 •	GET /Summary/<book_id> → Get the original summary
 
 •	GET /Translate/<book_id>?language=<lang> → Get translated summary
 
-⚙️ How It Works
+## ⚙️ How It Works
 
 Frontend allows users to:
 
@@ -83,7 +85,7 @@ Frontend allows users to:
 •	Ties all services together in isolated containers with shared networking
 
 
-🛠 Technologies Used
+## 🛠 Technologies Used
 
 •	Backend: Python (Flask)
 
@@ -95,7 +97,7 @@ Frontend allows users to:
 
 •	Web Server: Nginx (for serving frontend)
 
-👨‍💻 Authors
+## 👨‍💻 Authors
 
 •	Sushma Katakam
 
