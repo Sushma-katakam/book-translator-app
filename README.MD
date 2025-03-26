@@ -41,22 +41,31 @@ Open a terminal in the project root folder and run:
 
 ```bash
 docker-compose up --build
+```
 
 🌐 Access the App
 Once the containers are running, you can access the app at:
-Component	Link
-🖥 Frontend UI	http://localhost:8080
 
-📘 Book API	http://localhost:8081/books
+🖥 Frontend UI	
+http://localhost:8080
 
-🌍 Translation API	http://localhost:5000/Summary/1
+📘 Book API
+	http://localhost:8081/books
+
+🌍 Translation API	
+http://localhost:5000/Summary/1
 
 🔌 API Endpoints
 📘 Book API (http://localhost:8081)
+
 •	GET /books → Get list of all books
+
 •	GET /books/<id> → Get book by ID
+
 🌍 Translate API (http://localhost:5000)
+
 •	GET /Summary/<book_id> → Get the original summary
+
 •	GET /Translate/<book_id>?language=<lang> → Get translated summary
 
 ⚙️ How It Works
