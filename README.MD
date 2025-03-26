@@ -21,8 +21,6 @@ This app demonstrates how to integrate APIs, build a multilingual system, and or
 
 •	Technologies Used
 
-•	Data
-
 •	Authors
 
 
@@ -69,22 +67,35 @@ http://localhost:5000/Summary/1
 •	GET /Translate/<book_id>?language=<lang> → Get translated summary
 
 ⚙️ How It Works
-•	Frontend allows users to:
+
+Frontend allows users to:
+
 •	Select a book
+
 •	View the original summary
+
 •	 Choose a language to translate
+
 •	 Serves book data from summaries.json
+
 •	Calls MyMemory Translation API to translate the summary
+
 •	Ties all services together in isolated containers with shared networking
 
 
 🛠 Technologies Used
+
 •	Backend: Python (Flask)
+
 •	Frontend: HTML, CSS, JavaScript
+
 •	Translation API: MyMemory (free)
+
 •	DevOps: Docker & Docker Compose
+
 •	Web Server: Nginx (for serving frontend)
 
 👨‍💻 Authors
+
 •	Sushma Katakam
 
